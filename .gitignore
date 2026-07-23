@@ -1,0 +1,9 @@
+__pycache__/
+.venv/
+*.jpg
+*.png
+*.mp4
+*.pt
+
+test.py
+vehicle_detection.py
