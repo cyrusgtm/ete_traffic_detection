@@ -7,3 +7,4 @@ __pycache__/
 
 test.py
 vehicle_detection.py
+*.Identifier

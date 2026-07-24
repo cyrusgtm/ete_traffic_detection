@@ -25,6 +25,9 @@ def main():
         camera.get_fps(),
         (camera.get_width(), camera.get_height()), 
     )
+    if not writer.isOpened():
+        raise RuntimeError(f"Unable to open video for: {output_path}")
+    # write = cv2.VideoWriter(output_path, fourcc, camera.get_fps(), (camera.get_width(), camera.get_height()))
 
     try:
         while True:
@@ -33,6 +36,7 @@ def main():
                 break
 
             annotated_frame = detector.annotate(frame)
+            writer.write(annotated_frame)
             cv2.imshow("Traffic Detection", annotated_frame)
 
             
